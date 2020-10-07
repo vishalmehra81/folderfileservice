@@ -20,14 +20,14 @@ public class File {
     private String extension;
 
     @Column(name = "size")
-    private double size;
+    private int size;
 
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "folder_id", nullable = false)
     private Folder folder;
 
-    public File(String name, String extension, double size, Folder folder) {
+    public File(String name, String extension, int size, Folder folder) {
         this.name = name;
         this.extension = extension;
         this.size = size;
@@ -65,7 +65,7 @@ public class File {
         return size;
     }
 
-    public void setSize(double size) {
+    public void setSize(int size) {
         this.size = size;
     }
 

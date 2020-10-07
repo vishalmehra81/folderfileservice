@@ -19,7 +19,7 @@ public class User {
     private String name;
 
     @JsonBackReference
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user")
     private List<Folder> folders;
 
     public User(String name) {
@@ -52,6 +52,10 @@ public class User {
 
     public void setFolders(List<Folder> folders) {
         this.folders = folders;
+    }
+
+    public void addFolder(Folder folder) {
+        this.folders.add(folder);
     }
 }
 
